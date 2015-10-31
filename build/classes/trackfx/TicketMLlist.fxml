@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane  id="AnchorPane" prefHeight="400.0" prefWidth="200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="trackfx.TicketMLlistController">
+    <stylesheets>
+        <URL value="@skin.css" />
+    </stylesheets>
+   <children>
+      <VBox prefHeight="400.0" prefWidth="200.0">
+         <children>
+             <HBox prefHeight="75.0" prefWidth="200.0" >
+                 <children>
+                     <Button fx:id="closeList" minHeight="25.0" onMouseReleased="#closeListButton" text="X" />
+                 </children>
+             </HBox>
+            <ListView prefHeight="350.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
