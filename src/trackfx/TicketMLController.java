@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -52,10 +53,10 @@ public class TicketMLController implements Initializable {
     @FXML private void onKeyTyped(KeyEvent event){
 //        event.consume();
         if(event.getCode().equals(KeyCode.ENTER)){
-            Object o = cBox.getSelectionModel().getSelectedItem();
-            setCurrentTicket( o.toString());
-            if(!tkets.contains((Ticket)o)){
-                tkets.add(new Ticket((String) o));
+            Ticket o = (Ticket) cBox.getSelectionModel().getSelectedItem();
+            setCurrentTicket( o);
+            if(!tkets.contains(o)){
+                tkets.add(new Ticket( o.id));
             }
             cBox.hide();
         }
@@ -87,27 +88,35 @@ public class TicketMLController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        tkets.add(new Ticket("E001"));
-        tkets.add(new Ticket("E002"));
-        tkets.add(new Ticket("E003"));
-        tkets.add(new Ticket("E004"));
-        tkets.add(new Ticket("E005"));
-        tkets.add(new Ticket("E101"));
-        tkets.add(new Ticket("E102"));
-        tkets.add(new Ticket("E203"));
-        tkets.add(new Ticket("E204"));
-        tkets.add(new Ticket("E205"));
+        tkets.add(new Ticket("E001", "HP1", "FFS", "Some comment"));        
+        tkets.add(new Ticket("E002", "HP2", "FFS", "Some comment"));
+        tkets.add(new Ticket("E003", "HP3", "FFS", "Some comment"));
+        tkets.add(new Ticket("E004", "HP4", "FFS", "Some comment"));
+        tkets.add(new Ticket("E005", "HP5", "FFS", "Some comment"));
+        tkets.add(new Ticket("E101", "HP6", "FFS", "Some comment"));
+        tkets.add(new Ticket("E102", "HP7", "FFS", "Some comment"));
+        tkets.add(new Ticket("E203", "HP8", "FFS", "Some comment"));
+        tkets.add(new Ticket("E204", "HP9", "FFS", "Some comment"));
+        tkets.add(new Ticket("E205", "HPx", "FFS", "Some comment"));
     }    
     
     
     
     @FXML private Label label;
     @FXML private ComboBox cBox;
+    @FXML private ComboBox companyCB;
+    @FXML private ComboBox catwCB;
+    @FXML private TextArea commentA;
     
     
-    
-    private void setCurrentTicket(String input){
-        System.out.println("Current ID: " + input);
+    private void setCurrentTicket(Ticket input){
+        System.out.println("Current ID: " + input.id);
+        
+        catwCB.getEditor().setText(input.catwCode);
+        companyCB.getEditor().setText(input.company);
+        
+        commentA.setText(input.comment);
+        
     }
     
     

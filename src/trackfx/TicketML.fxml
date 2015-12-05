@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="601.0" styleClass="backPanel" stylesheets="@skin.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trackfx.TicketMLController">
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="601.0" styleClass="backPanel" stylesheets="@skin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trackfx.TicketMLController">
     <children>
       <HBox alignment="TOP_RIGHT" prefHeight="25.0">
          <children>
@@ -31,10 +31,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ComboBox fx:id="cBox" editable="true" onKeyReleased="#onKeyTyped" prefWidth="150.0" promptText="ID" visibleRowCount="10" />
+            <ComboBox fx:id="cBox" editable="true" onKeyReleased="#onKeyTyped" prefHeight="25.0" prefWidth="207.0" promptText="ID" visibleRowCount="10" />
+            <ComboBox fx:id="companyCB" prefHeight="25.0" prefWidth="245.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+            <ComboBox fx:id="catwCB" prefHeight="25.0" prefWidth="245.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+            <TextArea fx:id="commentA" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6" GridPane.rowSpan="2" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

@@ -21,6 +21,14 @@ public class Ticket {
         this.id = id;
     }
 
+    public Ticket(String id, String company, String catwCode, String comment) {
+        this.id = id;
+        this.company = company;
+        this.catwCode = catwCode;
+        this.comment = comment;
+    }
+    
+
     @Override
     public String toString() {
         return id; //To change body of generated methods, choose Tools | Templates.
